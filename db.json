@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userFirstName": "Leonardo",
+      "userLastName": "Araujo",
+      "email": "leonardo@hotmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": 2,
+      "userFirstName": "Thomas",
+      "userLastName": "Santos",
+      "email": "thomas@hotmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": 3,
+      "userFirstName": "Karen",
+      "userLastName": "Bonatto",
+      "email": "karen@hotmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": 4,
+      "userFirstName": "João",
+      "userLastName": "Carvalho",
+      "email": "joao@hotmail.com",
+      "password": "123456789"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone 17 plus max",
+      "value": 19999.5,
+      "group": "Eletrônicos"
+    },
+    {
+      "id": 2,
+      "name": "Iphone 15 mini",
+      "value": 17000.0,
+      "group": "Eletrônicos"
+    },
+    {
+      "id": 3,
+      "name": "Iphone 12",
+      "value": 7900,
+      "group": "Eletrônicos"
+    },
+    {
+      "id": 4,
+      "name": "Iphone 11 max",
+      "value": 5499,
+      "group": "Eletrônicos"
+    },
+    {
+      "id": 5,
+      "name": "Celular",
+      "value": 5499,
+      "group": "Eletrônicos"
+    },
+    {
+      "id": 6,
+      "name": "Celular",
+      "value": 5499,
+      "group": "Eletrônicos"
+    },
+    {
+      "id": 7,
+      "name": "Celular",
+      "value": 5499,
+      "group": "Eletrônicos"
+    },
+    {
+      "id": 8,
+      "name": "Celular",
+      "value": 5499,
+      "group": "Eletrônicos"
+    }
+  ],
+  "profile": { "name": "typicode" }
+}
