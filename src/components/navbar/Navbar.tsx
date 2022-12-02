@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/Auth";
 import { Dropdown, DropdownContainer } from "../dropdown/Dropdown";
@@ -16,7 +16,7 @@ import {
 const logo = require("../../images/logo.png");
 
 export const Navbar = () => {
-  const { User } = useAuth();
+  const { User, Logout } = useAuth();
   const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
 
   const navigate = useNavigate();
@@ -25,13 +25,13 @@ export const Navbar = () => {
       <ColumnContainer>
         <BlueBar />
         <RowContainer>
-          <LogoImage src={logo} alt="logo" />
+          <LogoImage src={logo} alt="logo" onClick={() => navigate("/")} />
           <NavBox>
             <NavList>
               <LiComponent onClick={() => navigate("/produtos")}>
                 <Underline>Produtos</Underline>
               </LiComponent>
-              <LiComponent>
+              <LiComponent onClick={Logout}>
                 <Underline>Logout</Underline>
               </LiComponent>
             </NavList>

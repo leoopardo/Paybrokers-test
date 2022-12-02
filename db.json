@@ -6,27 +6,6 @@
       "userLastName": "Araujo",
       "email": "leonardo@hotmail.com",
       "password": "123456789"
-    },
-    {
-      "id": 2,
-      "userFirstName": "Thomas",
-      "userLastName": "Santos",
-      "email": "thomas@hotmail.com",
-      "password": "123456789"
-    },
-    {
-      "id": 3,
-      "userFirstName": "Karen",
-      "userLastName": "Bonatto",
-      "email": "karen@hotmail.com",
-      "password": "123456789"
-    },
-    {
-      "id": 4,
-      "userFirstName": "João",
-      "userLastName": "Carvalho",
-      "email": "joao@hotmail.com",
-      "password": "123456789"
     }
   ],
   "products": [
@@ -56,28 +35,71 @@
     },
     {
       "id": 5,
-      "name": "Celular",
-      "value": 5499,
-      "group": "Eletrônicos"
+      "name": "Sofá 2 lugares ",
+      "value": 1999,
+      "group": "Casa"
     },
     {
       "id": 6,
-      "name": "Celular",
-      "value": 5499,
-      "group": "Eletrônicos"
+      "name": "Cadeira Madeira",
+      "value": 299,
+      "group": "Casa"
     },
     {
       "id": 7,
-      "name": "Celular",
-      "value": 5499,
-      "group": "Eletrônicos"
+      "name": "Mesa MDF Branca",
+      "value": 459.99,
+      "group": "Casa"
     },
     {
       "id": 8,
-      "name": "Celular",
-      "value": 5499,
-      "group": "Eletrônicos"
+      "name": "Cama tamanho queen",
+      "value": 1599.9,
+      "group": "Casa"
+    },
+    {
+      "id": 9,
+      "name": "Bolsa de luxo",
+      "value": 999.9,
+      "group": "Moda"
     }
   ],
-  "profile": { "name": "typicode" }
+  "sells": [
+    {
+      "totalValue": 150.9,
+      "date": "2022-11-27"
+    },
+    {
+      "totalValue": 1599.9,
+      "date": "2022-11-28"
+    },
+    {
+      "totalValue": 1599.9,
+      "date": "2022-11-29"
+    },
+    {
+      "totalValue": 459.99,
+      "date": "2022-11-29"
+    },
+    {
+      "totalValue": 299,
+      "date": "2022-11-29"
+    },
+    {
+      "totalValue": 1599.9,
+      "date": "2022-11-29"
+    },
+    {
+      "totalValue": 1599.9,
+      "date": "2022-10-29"
+    },
+    {
+      "totalValue": 1599.9,
+      "date": "2022-11-29"
+    },
+    {
+      "totalValue": 5000,
+      "date": "2022-12-29"
+    }
+  ]
 }

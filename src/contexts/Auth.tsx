@@ -4,8 +4,10 @@ import React, {
   useContext,
   useState,
 } from "react";
-import { Data } from "../data/users";
+
+import { api } from "../services/api";
 import { User } from "../types/User";
+import toast from "react-hot-toast";
 
 interface user {
   email: string;
@@ -23,10 +25,16 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [userData, setUserData] = useState<User | undefined>();
 
   async function Login(data: user) {
-    const foundedUser = Data.find((u) => u.email === data.email);
-    if (foundedUser?.password !== data.password)
+    const response: any = await api.get("/users");
+
+    const foundedUser = response.data.find((u: user) => u.email === data.email);
+
+    console.log(foundedUser);
+    if (foundedUser?.password !== data.password) {
+      toast.error(`Email ou senha invalido`);
       throw new Error("Unvalid password or email");
-    setUserData(foundedUser);
+    } else setUserData(foundedUser);
+    toast.success(`Bem Vindo ${userData?.userFirstName}`);
   }
   async function Logout() {
     setUserData(undefined);

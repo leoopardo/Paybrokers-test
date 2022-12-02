@@ -45,10 +45,13 @@ export const RowContainer = styled.div`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  z-index: 1;
 `;
 
 export const LogoImage = styled.img`
-  margin-left: 6%;
+  margin-left: 3%;
+  cursor: pointer;
   @media (max-width: 1025px) {
     width: 200px;
   }
@@ -66,7 +69,7 @@ export const NavBox = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-right: 6%;
+  margin-right: 3%;
 `;
 export const NavList = styled.ul`
   color: var(--blue700);
@@ -77,7 +80,7 @@ export const NavList = styled.ul`
   align-items: center;
   list-style: none;
   width: 50vh;
-  margin-right: 6%;
+  margin-left: 10%;
 
   @media (max-width: 1025px) {
     font-size: x-large;
