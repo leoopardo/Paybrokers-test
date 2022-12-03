@@ -28,17 +28,29 @@ export const Navbar = () => {
           <LogoImage src={logo} alt="logo" onClick={() => navigate("/")} />
           <NavBox>
             <NavList>
-              <LiComponent onClick={() => navigate("/produtos")}>
-                <Underline>Produtos</Underline>
-              </LiComponent>
-              <LiComponent onClick={Logout}>
-                <Underline>Logout</Underline>
-              </LiComponent>
+              {window.location.pathname === "/produtos" && (
+                <LiComponent onClick={() => navigate("/produtos")}>
+                  <Underline>New</Underline>
+                </LiComponent>
+              )}
+              {window.location.pathname === "/" && User && (
+                <LiComponent onClick={() => navigate("/produtos")}>
+                  <Underline>Produtos</Underline>
+                </LiComponent>
+              )}
+              {User && (
+                <LiComponent onClick={Logout}>
+                  <Underline>Logout</Underline>
+                </LiComponent>
+              )}
             </NavList>
-            <Dropdown
-              setIsMenuActive={setIsMenuActive}
-              isMenuActive={isMenuActive}
-            />
+            {User && (
+              <Dropdown
+                setIsMenuActive={setIsMenuActive}
+                isMenuActive={isMenuActive}
+              />
+            )}
+
             {User?.userFirstName && User?.userLastName && (
               <Icon>
                 {`${User.userFirstName[0].toUpperCase()}${User.userLastName[0].toUpperCase()}`}

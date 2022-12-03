@@ -6,62 +6,71 @@
       "userLastName": "Araujo",
       "email": "leonardo@hotmail.com",
       "password": "123456789"
+    },
+    {
+      "userFirstName": "Karen",
+      "userLastName": "Bonatto",
+      "email": "karen@hotmail.com",
+      "password": "123456789",
+      "id": 2
     }
   ],
   "products": [
     {
-      "id": 1,
-      "name": "IPhone 17 plus max",
-      "value": 19999.5,
-      "group": "Eletrônicos"
-    },
-    {
-      "id": 2,
-      "name": "Iphone 15 mini",
-      "value": 17000.0,
-      "group": "Eletrônicos"
-    },
-    {
       "id": 3,
       "name": "Iphone 12",
       "value": 7900,
-      "group": "Eletrônicos"
+      "group": "Eletrônicos",
+      "img": "https://imgs.casasbahia.com.br/55029401/1xg.jpg?imwidth=500",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": 4,
       "name": "Iphone 11 max",
       "value": 5499,
-      "group": "Eletrônicos"
+      "group": "Eletrônicos",
+      "img": "https://imgs.casasbahia.com.br/55014765/1xg.jpg?imwidth=500",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": 5,
       "name": "Sofá 2 lugares ",
       "value": 1999,
-      "group": "Casa"
+      "group": "Casa",
+      "img": "https://lojasincor.vteximg.com.br/arquivos/ids/249254-800-800/Sofa-2-Lugares-Cinza-em-Veludo-162m-Mies.jpg?v=637237746720330000",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": 6,
       "name": "Cadeira Madeira",
       "value": 299,
-      "group": "Casa"
+      "group": "Casa",
+      "img": "https://images.tcdn.com.br/img/img_prod/1065372/cadeira_em_madeira_e_tela_mago_575_1_f658f42508594612098a9443ce173227.jpg",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": 7,
       "name": "Mesa MDF Branca",
       "value": 459.99,
-      "group": "Casa"
+      "group": "Casa",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIAN8GW5Iriv06PHLCC_-Flnq01TI61ZoylA&usqp=CAU",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": 8,
       "name": "Cama tamanho queen",
       "value": 1599.9,
-      "group": "Casa"
+      "group": "Casa",
+      "img": "https://cdn.leroymerlin.com.br/products/cama_box_com_colchao_queen_classic_com_espuma_d40__66x158x198_1567050837_67ae_600x600.jpeg",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "id": 9,
       "name": "Bolsa de luxo",
       "value": 999.9,
-      "group": "Moda"
+      "group": "Moda",
+      "img": "https://cf.shopee.com.br/file/b6d3b75702fc0fcd39cb0810c418b5c4_tn",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     }
   ],
   "sells": [

@@ -57,3 +57,7 @@ export const ConfirmModalBtn = styled.button`
     scale: 1.05;
   }
 `;
+export const DashboardsListLabel = styled.label`
+  margin-top: 4%;
+  margin-bottom: -10px;
+`;

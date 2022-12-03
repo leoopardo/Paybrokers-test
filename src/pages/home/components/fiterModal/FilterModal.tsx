@@ -1,8 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { Sell } from "../../../../types/Sells";
-import { DashboardsListLabel } from "../../styles";
 import {
   ConfirmModalBtn,
+  DashboardsListLabel,
   DashboardsListSelect,
   FilterModaBox,
   FilterModalContainer,
@@ -33,37 +32,43 @@ export const FilterModal = (props: IFilterModal) => {
           <option value={"pizza"}>Grupos de produtos</option>
           <option value={"bar"}>Vendas por dia</option>
         </DashboardsListSelect>
-        <DashboardsListLabel htmlFor="dashboard">
-          Filtrar por mês
-        </DashboardsListLabel>
-        <DashboardsListSelect
-          onChange={(e) => props.setMonth(Number(e.target.value))}
-        >
-          <option value={props.month}>mês</option>
-          {props.sells
-            .sort(
-              (a: any, b: any) =>
-                new Date(a[0]).getMonth() - new Date(b[0]).getMonth()
-            )
-            .map((d: any, i: any, a: any) => {
-              if (
-                new Date(d[0]).getMonth() + 1 > 0 &&
-                new Date(d[0]).getMonth() + 1 < 13 &&
-                new Date(d[0]).getMonth() !== new Date(a[i - 1][0]).getMonth()
-              ) {
-                return (
-                  <option value={new Date(d[0]).getMonth() + 1}>
-                    {new Date(d[0]).getMonth() + 1}
-                  </option>
-                );
-              }
-              return <></>;
-            })}
-        </DashboardsListSelect>
+
+        {props.dashboard === "bar" && (
+          <>
+            <DashboardsListLabel htmlFor="dashboard">
+              Filtrar por mês
+            </DashboardsListLabel>
+            <DashboardsListSelect
+              onChange={(e) => props.setMonth(Number(e.target.value))}
+            >
+              <option value={props.month}>mês</option>
+              {props.sells
+                .sort(
+                  (a: any, b: any) =>
+                    new Date(a[0]).getMonth() - new Date(b[0]).getMonth()
+                )
+                .map((d: any, i: any, a: any) => {
+                  if (
+                    new Date(d[0]).getMonth() + 1 > 0 &&
+                    new Date(d[0]).getMonth() + 1 < 13 &&
+                    new Date(d[0]).getMonth() !==
+                      new Date(a[i - 1][0]).getMonth()
+                  ) {
+                    return (
+                      <option value={new Date(d[0]).getMonth() + 1}>
+                        {new Date(d[0]).getMonth() + 1}
+                      </option>
+                    );
+                  }
+                  return <></>;
+                })}
+            </DashboardsListSelect>
+          </>
+        )}
       </FilterModaBox>
 
       <ConfirmModalBtn onClick={() => props.setIsModalOpen(false)}>
-        <Close style={{height: "50px"}} />
+        <Close style={{ height: "50px" }} />
       </ConfirmModalBtn>
     </FilterModalContainer>
   );

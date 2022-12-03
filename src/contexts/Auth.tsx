@@ -29,7 +29,6 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
     const foundedUser = response.data.find((u: user) => u.email === data.email);
 
-    console.log(foundedUser);
     if (foundedUser?.password !== data.password) {
       toast.error(`Email ou senha invalido`);
       throw new Error("Unvalid password or email");

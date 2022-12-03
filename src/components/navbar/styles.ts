@@ -69,12 +69,12 @@ export const NavBox = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-right: 3%;
+  margin-right: 4%;
 `;
 export const NavList = styled.ul`
   color: var(--blue700);
   font-size: x-large;
-  font-weight: 600;
+  font-weight: 400;
   display: flex;
   justify-content: space-around;
   align-items: center;

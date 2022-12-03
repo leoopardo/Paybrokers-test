@@ -6,15 +6,23 @@ import {
   DashBoardBox,
   DashboardContainer,
   DashboardsList,
+  DashboardsListLabel,
   DashboardsOptions,
   DashboardsPage,
   ErrorDiv,
   FilterPannelH1,
+  FlutuanteImg,
+  FlutuanteImg2,
+  FlutuanteImg3,
   Input,
   LoginBody,
+  LoginBox,
+  LoginBtn,
   LoginContainer,
   LoginLabel,
   MobileBottomBar,
+  SelectFilterContainer,
+  SignUpBtn,
 } from "./styles";
 import { Chart } from "react-google-charts";
 import { Toaster } from "react-hot-toast";
@@ -23,9 +31,15 @@ import { Error } from "@styled-icons/material/Error";
 import { Sell } from "../../types/Sells";
 import { Filter } from "@styled-icons/feather/Filter";
 import FilterModal from "./components/fiterModal/FilterModal";
+import { LogIn } from "@styled-icons/boxicons-regular/LogIn";
+import { Google } from "@styled-icons/remix-line/Google";
+const flutuante = require("../../images/flutuante4.png");
+const flutuante2 = require("../../images/flutuante5.png");
+const flutuante3 = require("../../images/flutuante1.png");
 
 export const Home = () => {
   const { User } = useAuth();
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -91,8 +105,6 @@ export const Home = () => {
     );
   }, [month, sellsByDay]);
 
-  console.log(filtredSells);
-
   function handleChange(e: any) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
@@ -114,23 +126,55 @@ export const Home = () => {
           <Toaster position="top-center" reverseOrder={false} />
           <form onSubmit={handleLogin}>
             <LoginContainer>
-              <LoginLabel htmlFor="email">Email</LoginLabel>
-              <Input
-                placeholder="JohnDoe@gmail.com"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-              />
-              <LoginLabel htmlFor="Password">Password</LoginLabel>
-              <Input
-                placeholder="Password"
-                name="password"
-                value={form.password}
-                onChange={handleChange}
-              />
-              <button type="submit">Login</button>
+              <LoginBox>
+                <LoginLabel htmlFor="email">Email</LoginLabel>
+                <Input
+                  type={"email"}
+                  placeholder="JohnDoe@gmail.com"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                />
+              </LoginBox>
+              <LoginBox>
+                <LoginLabel htmlFor="Password">Password</LoginLabel>
+                <Input
+                  placeholder="Password"
+                  type={"password"}
+                  name="password"
+                  value={form.password}
+                  onChange={handleChange}
+                />
+              </LoginBox>
+
+              <LoginBtn type="submit">
+                Login
+                <LogIn style={{ height: "30px", color: "white" }} />
+              </LoginBtn>
+
+              <LoginBtn
+                style={{
+                  backgroundColor: "var(--cian)",
+                  color: "var(--blue700)",
+                  fontWeight: 600,
+                }}
+                type="button"
+              >
+                <Google style={{ height: "30px", color: "var(--blue700)" }} />{" "}
+                Login com o Google
+              </LoginBtn>
+
+              <SignUpBtn
+                type="button"
+                onClickCapture={() => navigate("/signup")}
+              >
+                Criar uma conta
+              </SignUpBtn>
             </LoginContainer>
           </form>
+          <FlutuanteImg src={flutuante} alt="flutuante" />
+          <FlutuanteImg2 src={flutuante2} alt="flutuante" />
+          <FlutuanteImg3 src={flutuante3} alt="flutuante" />
         </LoginBody>
       )}
 
@@ -181,49 +225,62 @@ export const Home = () => {
           </DashboardContainer>
 
           <DashboardsOptions>
-            <FilterPannelH1>Filters</FilterPannelH1>
-            <DashboardsList
-              onChange={(e) => {
-                setActiveDashboard(e.target.value);
-              }}
-            >
-              <option value={"pizza"}>Grupos de produtos</option>
-              <option value={"bar"}>Vendas por dia</option>
-            </DashboardsList>
-            {activeDashboard === "bar" && (
+            <FilterPannelH1>Filtros</FilterPannelH1>
+            <SelectFilterContainer>
+              <DashboardsListLabel htmlFor="dashboard">
+                Dashboard
+              </DashboardsListLabel>
               <DashboardsList
-                placeholder="Mês"
                 onChange={(e) => {
-                  setMonth(Number(e.target.value));
+                  setActiveDashboard(e.target.value);
                 }}
               >
-                <option value={month}>mês</option>
-                {sellsByDay
-                  .sort(
-                    (a: any, b: any) =>
-                      new Date(a[0]).getMonth() - new Date(b[0]).getMonth()
-                  )
-                  .map((d: any, i: any, a: any) => {
-                    if (
-                      new Date(d[0]).getMonth() + 1 > 0 &&
-                      new Date(d[0]).getMonth() + 1 < 13 &&
-                      new Date(d[0]).getMonth() !==
-                        new Date(a[i - 1][0]).getMonth()
-                    ) {
-                      return (
-                        <option value={new Date(d[0]).getMonth() + 1}>
-                          {new Date(d[0]).getMonth() + 1}
-                        </option>
-                      );
-                    } else
-                      <ErrorDiv>
-                        <h2>
-                          <Error style={{ width: "50px", color: "#002846" }} />
-                          Nenhum dado encontrado
-                        </h2>
-                      </ErrorDiv>;
-                  })}
+                <option value={"pizza"}>Grupos de produtos</option>
+                <option value={"bar"}>Vendas por dia</option>
               </DashboardsList>
+            </SelectFilterContainer>
+
+            {activeDashboard === "bar" && (
+              <SelectFilterContainer>
+                <DashboardsListLabel htmlFor="dashboard">
+                  Filtrar por mês
+                </DashboardsListLabel>
+                <DashboardsList
+                  placeholder="Mês"
+                  onChange={(e) => {
+                    setMonth(Number(e.target.value));
+                  }}
+                >
+                  <option value={month}>mês</option>
+                  {sellsByDay
+                    .sort(
+                      (a: any, b: any) =>
+                        new Date(a[0]).getMonth() - new Date(b[0]).getMonth()
+                    )
+                    .map((d: any, i: any, a: any) => {
+                      if (
+                        new Date(d[0]).getMonth() + 1 > 0 &&
+                        new Date(d[0]).getMonth() + 1 < 13 &&
+                        new Date(d[0]).getMonth() !==
+                          new Date(a[i - 1][0]).getMonth()
+                      ) {
+                        return (
+                          <option value={new Date(d[0]).getMonth() + 1}>
+                            {new Date(d[0]).getMonth() + 1}
+                          </option>
+                        );
+                      } else
+                        <ErrorDiv>
+                          <h2>
+                            <Error
+                              style={{ width: "50px", color: "#002846" }}
+                            />
+                            Nenhum dado encontrado
+                          </h2>
+                        </ErrorDiv>;
+                    })}
+                </DashboardsList>
+              </SelectFilterContainer>
             )}
           </DashboardsOptions>
         </DashboardsPage>
