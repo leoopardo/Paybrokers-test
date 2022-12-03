@@ -134,16 +134,16 @@ export const Home = () => {
                 <LoginLabel htmlFor="email">Email</LoginLabel>
                 <Input
                   type={"email"}
-                  placeholder="JohnDoe@gmail.com"
+                  placeholder="Johndoe@gmail.com"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                 />
               </LoginBox>
               <LoginBox>
-                <LoginLabel htmlFor="Password">Password</LoginLabel>
+                <LoginLabel htmlFor="Password">Senha</LoginLabel>
                 <Input
-                  placeholder="Password"
+                  placeholder="Senha@123"
                   type={"password"}
                   name="password"
                   value={form.password}

@@ -40,7 +40,7 @@ export const DropdownContainer = (props: any) => {
           <MobileList>
             {window.location.pathname === "/produtos" && (
               <MobileLi onClick={() => props.setIsNewProductModalOpen(true)}>
-                <UnderlineMobile>New</UnderlineMobile>
+                <UnderlineMobile>Novo</UnderlineMobile>
               </MobileLi>
             )}
             {window.location.pathname === "/" && User && (

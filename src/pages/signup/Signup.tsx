@@ -81,7 +81,7 @@ export const Signup = () => {
             <LoginLabel htmlFor="email">Email</LoginLabel>
             <Input
               type={"email"}
-              placeholder="JohnDoe@gmail.com"
+              placeholder="Johndoe@gmail.com"
               name="email"
               value={signUpData.email}
               onChange={handleChange}
@@ -90,7 +90,7 @@ export const Signup = () => {
           <LoginBox>
             <LoginLabel htmlFor="Password">Senha</LoginLabel>
             <Input
-              placeholder="Password"
+              placeholder="Senha@123"
               type={"password"}
               name="password"
               value={signUpData.password}

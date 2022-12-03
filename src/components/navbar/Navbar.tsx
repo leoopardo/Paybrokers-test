@@ -33,7 +33,7 @@ export const Navbar = () => {
             <NavList>
               {window.location.pathname === "/produtos" && (
                 <LiComponent onClick={() => setIsNewProductModalOpen(true)}>
-                  <Underline>New</Underline>
+                  <Underline>Novo</Underline>
                 </LiComponent>
               )}
               {window.location.pathname === "/" && User && (
