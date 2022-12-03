@@ -1,4 +1,4 @@
-# 1- CLonando e Instalando dependências:
+# 1- Clonando e Instalando dependências:
   ### - Selecione uma pasta da sua escolha e abra com o terminal
   ### - Copie o link do repositório e cole após o comando `$ git clone (link aqui)`
   ### - Utilize o comando `$ npm install` para instalar as dependências
