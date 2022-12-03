@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/Auth";
+import { NewProductModal } from "../../pages/products/components/newProduct/NewProductModal";
 import { Dropdown, DropdownContainer } from "../dropdown/Dropdown";
 import {
   BlueBar,
@@ -18,6 +19,8 @@ const logo = require("../../images/logo.png");
 export const Navbar = () => {
   const { User, Logout } = useAuth();
   const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
+  const [isNewProductModalOpen, setIsNewProductModalOpen] =
+    useState<boolean>(false);
 
   const navigate = useNavigate();
   return (
@@ -29,7 +32,7 @@ export const Navbar = () => {
           <NavBox>
             <NavList>
               {window.location.pathname === "/produtos" && (
-                <LiComponent onClick={() => navigate("/produtos")}>
+                <LiComponent onClick={() => setIsNewProductModalOpen(true)}>
                   <Underline>New</Underline>
                 </LiComponent>
               )}
@@ -61,7 +64,11 @@ export const Navbar = () => {
       </ColumnContainer>
       <DropdownContainer
         isMenuActive={isMenuActive}
-        list={["Produtos", "Logout"]}
+        setIsNewProductModalOpen={setIsNewProductModalOpen}
+      />
+      <NewProductModal
+        isModalOpen={isNewProductModalOpen}
+        setIsModalOpen={setIsNewProductModalOpen}
       />
     </>
   );

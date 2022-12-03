@@ -86,11 +86,10 @@ export const FlutuanteImg3 = styled.img`
   position: absolute;
   left: 20px;
   bottom: 20px;
-  
+
   @media (max-width: 950px) {
     display: none;
   }
-
 `;
 
 export const LoginContainer = styled.div`
@@ -201,6 +200,7 @@ export const DashBoardBox = styled.div`
   animation-name: show;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  overflow-y: auto;
   z-index: -1;
   margin-left: 4%;
 
@@ -220,6 +220,8 @@ export const DashBoardBox = styled.div`
 
 export const DashboardsOptions = styled.div`
   height: 80%;
+  position: absolute;
+  right: 0;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;

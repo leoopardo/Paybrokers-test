@@ -7,11 +7,13 @@ import { ProductsContainer } from "./styles";
 import toast, { Toaster } from "react-hot-toast";
 import { useAuth } from "../../contexts/Auth";
 import { useNavigate } from "react-router-dom";
+import { NewProductModal } from "./components/newProduct/NewProductModal";
 
 export const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [product, setProduct] = useState<Product | undefined>();
   const [isDetailModalOppen, setIsDetailModalOppen] = useState<boolean>(false);
+
   const { User } = useAuth();
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ export const Products = () => {
       }
     }
     fetchProducts();
-  }, []);
+  }, [window.location]);
 
   return (
     <>

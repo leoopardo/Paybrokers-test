@@ -83,7 +83,7 @@ export const DescriptionDiv = styled.div`
 `;
 export const ColorH4 = styled.h4`
   color: var(--cian);
-  margin-left: 74%;
+  margin-left: 65%;
 `;
 
 export const ColorH3 = styled.h4`

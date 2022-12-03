@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/Auth";
 import {
   DropdownBox,
   MobileLi,
@@ -25,6 +27,8 @@ export const Dropdown = (props: any) => {
 };
 
 export const DropdownContainer = (props: any) => {
+  const navigate = useNavigate();
+  const { User, Logout } = useAuth();
   return (
     <>
       {props.isMenuActive && (
@@ -34,9 +38,21 @@ export const DropdownContainer = (props: any) => {
           }}
         >
           <MobileList>
-            {props.list.map((item: string) => (
-              <MobileLi><UnderlineMobile>{item}</UnderlineMobile></MobileLi>
-            ))}
+            {window.location.pathname === "/produtos" && (
+              <MobileLi onClick={() => props.setIsNewProductModalOpen(true)}>
+                <UnderlineMobile>New</UnderlineMobile>
+              </MobileLi>
+            )}
+            {window.location.pathname === "/" && User && (
+              <MobileLi onClick={() => navigate("/produtos")}>
+                <UnderlineMobile>Produtos</UnderlineMobile>
+              </MobileLi>
+            )}
+            {User && (
+              <MobileLi onClick={Logout}>
+                <UnderlineMobile>Logout</UnderlineMobile>
+              </MobileLi>
+            )}
           </MobileList>
         </MobileListBox>
       )}

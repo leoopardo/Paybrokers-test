@@ -89,7 +89,11 @@ export const Home = () => {
           arr.push([sell.date, sell.totalValue]);
         }
 
-        setSellsByDay(arr);
+        setSellsByDay(
+          arr.sort(
+            (a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime()
+          )
+        );
       } catch (error) {
         console.log(error);
       }
