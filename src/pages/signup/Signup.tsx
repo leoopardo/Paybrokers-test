@@ -58,7 +58,7 @@ export const Signup = () => {
         <LoginContainer style={{ paddingTop: "4%", paddingBottom: "4%" }}>
           <LoginLabel style={{ fontWeight: 700 }}>Crie sua Conta</LoginLabel>
           <LoginBox>
-            <LoginLabel htmlFor="userFirstName">First name</LoginLabel>
+            <LoginLabel htmlFor="userFirstName">Primeiro nome</LoginLabel>
             <Input
               type={"text"}
               placeholder="John"
@@ -68,7 +68,7 @@ export const Signup = () => {
             />
           </LoginBox>
           <LoginBox>
-            <LoginLabel htmlFor="userLastName">Last name</LoginLabel>
+            <LoginLabel htmlFor="userLastName">Último name</LoginLabel>
             <Input
               type={"text"}
               placeholder="Doe"
@@ -88,7 +88,7 @@ export const Signup = () => {
             />
           </LoginBox>
           <LoginBox>
-            <LoginLabel htmlFor="Password">Password</LoginLabel>
+            <LoginLabel htmlFor="Password">Senha</LoginLabel>
             <Input
               placeholder="Password"
               type={"password"}
