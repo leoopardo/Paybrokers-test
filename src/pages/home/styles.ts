@@ -142,6 +142,7 @@ export const LoginBtn = styled.button`
   height: 10%;
   margin-top: 5%;
   transition: transform 0.3s;
+  cursor: pointer;
 
   :active {
     transform: scale(1.1);
@@ -164,6 +165,7 @@ export const SignUpBtn = styled.button`
   :hover {
     background-color: darkred;
     color: white;
+    cursor: pointer;
   }
 `;
 

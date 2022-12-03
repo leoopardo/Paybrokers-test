@@ -34,7 +34,7 @@ export const DetailsModal = (props: IDetailsModal) => {
       <ModalBody>
         <ProductImg src={props.product?.img} alt={props.product?.name} />
         <DescriptionDiv>
-          <p>{props.product?.description}</p>
+          <p style={{ textAlign: "justify"}}>{props.product?.description}</p>
           <ColorH3>R${props.product?.value}</ColorH3>
         </DescriptionDiv>
       </ModalBody>
